@@ -110,5 +110,5 @@ trait CallSiteStats {
       return null;
    }
 
-   abstract protected function isExternalCallSite($file);
+   abstract protected static function isExternalCallSite($file);
 }
