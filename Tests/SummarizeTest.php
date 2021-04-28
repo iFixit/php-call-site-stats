@@ -1,6 +1,6 @@
 <?php
 
-class SummarizeTest extends PHPUnit_Framework_TestCase {
+class SummarizeTest extends PHPUnit\Framework\TestCase {
    public function testRatios() {
       $this->assertCommandSuccessful(<<<EOT
 blah.php:23 blah 3 7
