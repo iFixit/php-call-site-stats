@@ -63,8 +63,8 @@ class StatsCollection {
          if ($lineData === null){ 
             $lineData = [0,0];
          }
-         $lineData[0] += $parts[$this->column1];
-         $lineData[1] += $parts[$this->column2];
+         $lineData[0] += (int)$parts[$this->column1];
+         $lineData[1] += (int)$parts[$this->column2];
       }
    }
 
