@@ -34,6 +34,12 @@ $stats->printResults();
 
 
 class StatsCollection {
+   public bool $stats;
+   public bool $ratio;
+   public int $column1;
+   public ?int $column2 = null;
+   public array $lines = [];
+
    public function __construct($type, $column1, $column2 = null) {
       $this->stats = $type == 'stats';
       $this->ratio = $type == 'ratio';
@@ -105,6 +111,18 @@ class StatsCollection {
 }
 
 class StatsStream {
+   public ?float $_min;
+   public ?float $_max;
+   // number of items seen
+   public int $_n;
+   // running mean
+   public float $_mean;
+   // running sum of squares deviations from the mean
+   public float $_ss;
+   // the running 'actual sum'
+   public float $_sum;
+   public bool $writable;
+
    public function __construct() {
       $this->_min = null;
       $this->_max = null;
